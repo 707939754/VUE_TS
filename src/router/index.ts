@@ -5,8 +5,18 @@ Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
   {
-    path: "/videos",
+    path: "/",
     name: "Home",
+    component: () => import("../views/home/home")
+  },
+  {
+    path: "/article",
+    name: "article",
+    component: () => import("../views/article/article")
+  },
+  {
+    path: "/videos",
+    name: "videos",
     component: () => import("../views/videos/videos")
   },
   {

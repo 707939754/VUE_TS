@@ -7,6 +7,8 @@ export default class AppHead extends Vue {
 
     @Prop() defaultIndex: any;
 
+    @Prop() iscollapse: any;
+
     /**
      * 生命周期 mounted
      */
@@ -18,7 +20,7 @@ export default class AppHead extends Vue {
      * 菜单点击
      */
     public selectItem() {
-        console.log("1214");
+        console.log();
     }
 
     /**
@@ -27,12 +29,15 @@ export default class AppHead extends Vue {
     public render() {
         return (
             <div>
-                <el-menu default-active={this.defaultIndex} mode="horizontal" on-select={this.selectItem} background-color="#545c64"
-                    text-color="#fff" active-text-color="#ffd04b" router={true}>
+                <el-menu class="appmenu" default-active={this.defaultIndex} mode="vertical" on-select={this.selectItem}
+                    background-color="#2f4055" text-color="#fff" active-text-color="#ffd04b" router={true} collapse={this.iscollapse}>
                     {
                         this.headData.map((item: any) => {
                             return (
-                                <el-menu-item index={item.id}>{item.name}</el-menu-item>
+                                <el-menu-item index={item.id}>
+                                    <i class={item.icon}></i>
+                                    <span slot="title" class="title">{item.name}</span>
+                                </el-menu-item>
                             )
                         })
                     }
