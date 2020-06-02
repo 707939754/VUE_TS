@@ -6,7 +6,7 @@ export default class Home extends Vue {
     public render() {
         return (
             <div>
-                home
+                homelist
             </div>
         )
     }
