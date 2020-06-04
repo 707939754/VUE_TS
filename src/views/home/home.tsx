@@ -5,7 +5,7 @@ import "./home.less";
 export default class Home extends Vue {
 
     public login() {
-        console.log();
+        console.log("?111");
     }
 
     /**
